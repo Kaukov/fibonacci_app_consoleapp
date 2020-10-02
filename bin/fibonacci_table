@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+const fibonacciTableString = require('../src/app')
+
+/**
+ * getBadParamsError
+ * Returns an error message when we have input bad params or not input any params at all
+ *
+ * @returns {string}
+ */
+const getBadParamsError = () => {
+    return 'Unknown parameter or no parameters provided!\n'
+        + 'Please provide the parameter -n followed by a number'
+}
+
+// Get the first 1 or 2 arguments passed to our executable
+let [ , , key, value ] = process.argv
+
+// If we haven't provided a key as the first argument, or it's the wrong key name,
+// display an error for bad params
+if (!key || !key.match(/-n(\s|=?)([0-9]+)?/)) {
+    return console.log(getBadParamsError())
+}
+
+// If we have provided the key-value as -n=<number>,
+// set the value equal to the value after the equal sign
+if (key.indexOf('=') !== -1) {
+    value = key.substring(1).split('=')[1]
+}
+
+// Prints the Fibonacci table string to stdout
+console.log('')
+console.log(fibonacciTableString(value))
