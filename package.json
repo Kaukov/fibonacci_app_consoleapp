@@ -4,11 +4,15 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
+    "lint": "eslint src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.10.0"
+  },
+  "dependencies": {
+    "fibonacci_app_lib": "git+https://github.com/Kaukov/fibonacci_app_lib.git"
   }
 }
