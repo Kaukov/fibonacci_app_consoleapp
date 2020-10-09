@@ -6,28 +6,28 @@ describe('Bad String Requests', () => {
         const table = fibonacciTableString(0)
 
         expect(table).to.be.a('string')
-        expect(table).to.equal('Nothing to display for the 0th number.')
+        expect(table).to.equal('Invalid number or number less than 1 provided!')
     })
 
     it('should return error message for a negative number', () => {
         const table = fibonacciTableString(-10)
 
         expect(table).to.be.a('string')
-        expect(table).to.equal('Please provide a positive integer value!')
+        expect(table).to.equal('Invalid number or number less than 1 provided!')
     })
 
     it('should return error message for a exceeding the max int value', () => {
         const table = fibonacciTableString(Number.MAX_SAFE_INTEGER + 2)
 
         expect(table).to.be.a('string')
-        expect(table).to.equal('Exceeding the max allowed integer value')
+        expect(table).to.equal('Very high number provided. Please provide a lower value!')
     })
 
     it('should return error message for wrong data type', () => {
         const table = fibonacciTableString('kjdsfaksdf')
 
         expect(table).to.be.a('string')
-        expect(table).to.equal('Please provide an integer value!')
+        expect(table).to.equal('Invalid number or number less than 1 provided!')
     })
 })
 
